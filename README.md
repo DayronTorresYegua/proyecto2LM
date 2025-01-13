@@ -1,5 +1,12 @@
-# proyecto2LM
+Pasos a realizar
 
-paleta 
+1. Github ✔
+2. Clonado ✔
+3. Colores -> css variables
+4. html > header footer
+5. Css header y footer
 
-https://coolors.co/56e39f-59c9a5-5b6c5d-3b2c35-2a1f2d
+
+Paleta de colores 
+
+https://coolors.co/56e39f-3b2c35
