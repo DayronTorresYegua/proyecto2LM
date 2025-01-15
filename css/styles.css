@@ -2,7 +2,6 @@
     /* Tema claro */
     --primary: #56e39f;
     --secondary: #3b2c35;
-
 }
 
 * {
@@ -10,4 +9,76 @@
     padding: 0;
     box-sizing: border-box;   
     font-size: monospace;
+    list-style: none;
+
+}   
+
+/* Header */
+.cabecera {
+    width: 100%;
+    display: flex;
+    align-items: flex-end;
+    background-color: #56e39f;
+    padding-left: 3rem;
+    font-size: 1.3rem;
+    position: fixed;
+}
+
+.cabecera__logo {
+    width: 6rem;
+    margin-right: 2rem; 
+}
+
+.cabecera__menu {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+    gap: 1rem;
+}
+
+.cabecera__menu__enlaces {
+    color: rgb(27, 27, 27);
+}
+
+.cabecera__menu__enlaces:hover {
+    color: rgb(117, 117, 117);
+}
+
+/* Footer */
+/* Footer */
+.pie {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #56e39f;
+    padding: 1rem;
+    position: fixed;
+    bottom: 0;
+    flex-wrap: wrap;
+}
+
+.pie__redes {
+    display: flex;
+    gap: 2rem; 
+    align-items: center; 
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.pie__redes__enlace {
+    color: #3b2c35;
+    font-size: 1.5rem;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+.pie__redes__enlace img {
+    width: 2rem;
+    margin-right: 0.5rem; 
+}
+
+.pie__redes__enlace:hover {
+    color: rgb(117, 117, 117);
 }
