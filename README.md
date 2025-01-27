@@ -1,12 +1,5 @@
-Pasos a realizar
-
-1. Github ✔
-2. Clonado ✔
-3. Colores -> css variables
-4. html > header footer
-5. Css header y footer
-
-
-Paleta de colores 
-
-https://coolors.co/56e39f-3b2c35
+# Cosas por realizar
+1. Hacer las paginas restantes
+2. Elegir tema de la pagina adicional
+3. Ajustar los headers a cada pagina
+4. Responder a las preguntas escritas
