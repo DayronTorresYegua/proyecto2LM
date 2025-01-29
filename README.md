@@ -33,6 +33,14 @@ El sitio está construido con **HTML5**, **CSS** y utiliza **buena semántica** 
 
 El principal objetivo de **Bushido Blades** es ofrecer una plataforma en línea eficiente, profesional y elegante donde los clientes puedan explorar y acceder a servicios relacionados con las katanas. Además, se busca crear una comunidad alrededor de la cultura samurái a través de la educación en Kenjutsu y la atención al detalle en cada katana personalizada.
 
+## Instrucciones para visualización
+
+1. Para poder visualizar el proyecto primero deberemos tener acceso al repositorio
+2. Una vez con acceso al repositorio podemos tanto clonarlo como descargar los archivos
+3. Si hemos decidido clonar lo que haremos sera iniciar el repositorio con el IDE que usemos
+4. En caso de haber descargado los archivos lo que tendremos que hacer es abrir nuestro IDE y cargar los archivos dentro de este
+5. Una vez hecho esto ya podremos iniciar el proyecto para poder visualizarlo
+
 ## Detalles
 
 - He hecho uso de la etiqueta div en esta ocasion debido 
