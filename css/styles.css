@@ -178,6 +178,8 @@ main {
     font-style: italic;
 }
 
+
+
 /* SECCIÓN SERVICIOS */
 .servicios {
     padding: 2rem 1rem;
@@ -200,7 +202,6 @@ main {
 
 .servicios__descripcion {
     font-size: 1.2rem;
-    color: var(--text-dark);
 }
 
 /* Sección de Servicios Generales */
@@ -246,13 +247,11 @@ main {
 
 .kenjutsu__titulo {
     font-size: 1.8rem;
-    color: var(--secondary);
     margin-bottom: 0.5rem;
 }
 
 .kenjutsu__descripcion {
     font-size: 1rem;
-    color: var(--text-dark);
 }
 
 .kenjutsu__imagen {
