@@ -1,8 +1,6 @@
 # Cosas por realizar
-1. Hacer las paginas restantes
-2. Elegir tema de la pagina adicional
-3. Ajustar los headers a cada pagina
-4. Responder a las preguntas escritas
+1. Realizar pagina adicional, terminar la pagina de servicios
+2. Realizar el readme
 
 
 # Instrucciones del proyecto
