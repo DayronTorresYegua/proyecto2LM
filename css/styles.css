@@ -12,6 +12,12 @@
     list-style: none;
 }
 
+html, body {
+    height: 100%;
+}
+
+
+
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
@@ -20,6 +26,10 @@ body {
     background-color: #ffffff;
     color: var(--text-dark);
     padding-top: 6rem;
+}
+
+main {
+    flex: 1;
 }
 
 /* HEADER */
@@ -169,6 +179,151 @@ body {
     font-size: 1rem;
     font-style: italic;
 }
+
+/* SECCIÓN SERVICIOS */
+.servicios {
+    padding: 2rem 1rem;
+    background-color: #f4f4f4;
+}
+
+/* Sección de Introducción */
+.servicios__introduccion {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.servicios__titulo {
+    font-size: 2.5rem;
+    color: var(--secondary);
+}
+
+.servicios__descripcion {
+    font-size: 1.2rem;
+    color: var(--text-dark);
+}
+
+/* Sección de Servicios Individuales (Personalización, Mantenimiento, Kenjutsu) */
+.servicios__personalizacion,
+.servicios__mantenimiento,
+.servicios__kenjutsu {
+    width: 70%;
+    background-color: #ffffff;
+    border: 0.2rem solid #ddd;
+    border-radius: 0.5rem;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 0.25rem 0.4rem rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.servicios__personalizacion:hover,
+.servicios__mantenimiento:hover,
+.servicios__kenjutsu:hover {
+    transform: translateY(-0.3rem);
+    box-shadow: 0 0.5rem 0.6rem rgba(0, 0, 0, 0.2);
+}
+
+/* Estilos para las imágenes dentro de cada servicio */
+.servicio__imagen {
+    width: 100%;
+    object-fit: cover;
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+/* Títulos de cada servicio */
+.servicio__nombre {
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+    color: var(--secondary);
+}
+
+/* Descripción de cada servicio */
+.servicio__descripcion {
+    font-size: 1rem;
+    color: var(--text-dark);
+}
+
+/* Para los subtítulos de los servicios */
+.servicios__subtitulo {
+    font-size: 2rem;
+    color: var(--secondary);
+    margin-bottom: 1rem;
+}
+
+
+/* Pagina de contacto */
+.contacto {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    background-color: #f9f9f9;
+}
+
+.contacto__info {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.contacto__titulo {
+    font-size: 2rem;
+    color: var(--secondary);
+}
+
+.contacto__descripcion {
+    font-size: 1.2rem;
+    color: var(--text-dark);
+}
+
+.contacto__formulario {
+    background-color: #ffffff;
+    padding: 2rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 600px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+label {
+    font-weight: bold;
+    color: var(--text-dark);
+}
+
+input, textarea, select {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 0.25rem;
+    font-size: 1rem;
+}
+
+textarea {
+    resize: vertical;
+}
+
+button {
+    background-color: var(--primary);
+    color: var(--text-light);
+    border: none;
+    padding: 0.75rem;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: var(--secondary);
+}
+
 
 /* FOOTER */
 .pie {
