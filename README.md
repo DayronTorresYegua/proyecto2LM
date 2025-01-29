@@ -1,14 +1,39 @@
 # Cosas por realizar
-1. Realizar pagina adicional, terminar la pagina de servicios
-2. Realizar el readme
+1. Falta la seccion de afilar en servicios, añadir dos secciones en contacto, realizar la pagina adicional
+2. En el readme añadir detalles que se vean convenientes
 
+## Ideas 
+- Para la pagina adicional las secciones dividirlas en por ejemplo primero un carrusel de fotos,
+una promocion y repetir la opcion de clientes o pensar en otra
+
+- Para la pagina de contacto añadir por ejemplo seccion e informacion de la empresa y en 
+la otra
 
 # Instrucciones del proyecto
 
 ## Descripción
+**Bushido Blades** es un proyecto web dedicado a ofrecer una experiencia única para los entusiastas de las katanas y la cultura samurái. 
+A través de una plataforma visualmente atractiva y fácil de navegar, el sitio web proporciona información sobre los servicios que ofrece la tienda, 
+que van desde la personalización y el mantenimiento de katanas hasta clases de Kenjutsu, el arte tradicional de combate con katana.
+
+### Características Principales
+
+- **Personalización de Katanas**: Los usuarios pueden acceder a un servicio de personalización, donde tienen la oportunidad de crear una katana única que se ajuste a su estilo y necesidades personales.
+
+- **Mantenimiento y Afilado**: Ofrecemos servicios de mantenimiento y afilado para garantizar que las katanas estén en óptimas condiciones, listos para su uso en cualquier momento.
+
+- **Clases de Kenjutsu**: Bushido Blades también organiza clases de Kenjutsu, adecuadas para todos los niveles de habilidad. 
+Los instructores son expertos en el arte del combate samurái y brindan formación tanto para principiantes como para avanzados.
+
+### Estructura del Proyecto
+
+El sitio está construido con **HTML5**, **CSS** y utiliza **buena semántica** para asegurar una estructura limpia y fácil de mantener. La web está diseñada para ser completamente funcional en diferentes dispositivos, con un enfoque en la accesibilidad y la experiencia del usuario.
+
+### Objetivos del Proyecto
+
+El principal objetivo de **Bushido Blades** es ofrecer una plataforma en línea eficiente, profesional y elegante donde los clientes puedan explorar y acceder a servicios relacionados con las katanas. Además, se busca crear una comunidad alrededor de la cultura samurái a través de la educación en Kenjutsu y la atención al detalle en cada katana personalizada.
 
 ## Detalles
-
 
 - He hecho uso de la etiqueta div en esta ocasion debido 
 a que es la que mas se ajusta a lo quiero representar 
