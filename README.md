@@ -1,14 +1,3 @@
-# Cosas por realizar
-1. Falta la seccion de afilar en servicios, añadir dos secciones en contacto, realizar la pagina adicional
-2. En el readme añadir detalles que se vean convenientes
-
-## Ideas 
-- Para la pagina adicional las secciones dividirlas en por ejemplo primero un carrusel de fotos,
-una promocion y repetir la opcion de clientes o pensar en otra
-
-- Para la pagina de contacto añadir por ejemplo seccion e informacion de la empresa y en 
-la otra
-
 # Instrucciones del proyecto
 
 ## Descripción
