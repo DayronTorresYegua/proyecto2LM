@@ -16,8 +16,6 @@ html, body {
     height: 100%;
 }
 
-
-
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
@@ -184,6 +182,9 @@ main {
 .servicios {
     padding: 2rem 1rem;
     background-color: #f4f4f4;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 /* Sección de Introducción */
@@ -202,57 +203,67 @@ main {
     color: var(--text-dark);
 }
 
-/* Sección de Servicios Individuales (Personalización, Mantenimiento, Kenjutsu) */
+/* Sección de Servicios Generales */
 .servicios__personalizacion,
-.servicios__mantenimiento,
-.servicios__kenjutsu {
+.servicios__mantenimiento {
     width: 70%;
     background-color: #ffffff;
     border: 0.2rem solid #ddd;
     border-radius: 0.5rem;
     padding: 2rem;
-    margin-bottom: 2rem;
+    margin: 0 auto 2rem auto; /* Centrar horizontalmente */
     box-shadow: 0 0.25rem 0.4rem rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .servicios__personalizacion:hover,
-.servicios__mantenimiento:hover,
+.servicios__mantenimiento:hover {
+    transform: translateY(-0.3rem);
+    box-shadow: 0 0.5rem 0.6rem rgba(0, 0, 0, 0.2);
+}
+
+.servicios__kenjutsu {
+    display: flex;
+    align-items: center;
+    width: 70%;
+    background-color: #ffffff;
+    border: 0.2rem solid #ddd;
+    border-radius: 0.5rem;
+    box-shadow: 0 0.25rem 0.4rem rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
 .servicios__kenjutsu:hover {
     transform: translateY(-0.3rem);
     box-shadow: 0 0.5rem 0.6rem rgba(0, 0, 0, 0.2);
 }
 
-/* Estilos para las imágenes dentro de cada servicio */
-.servicio__imagen {
-    width: 100%;
-    object-fit: cover;
-    border-radius: 0.5rem;
-    margin-bottom: 1rem;
+.kenjutsu__texto {
+    width: 65%;
+    padding: 2rem;
+    text-align: left;
 }
 
-/* Títulos de cada servicio */
-.servicio__nombre {
+.kenjutsu__titulo {
     font-size: 1.8rem;
-    margin-bottom: 0.5rem;
     color: var(--secondary);
+    margin-bottom: 0.5rem;
 }
 
-/* Descripción de cada servicio */
-.servicio__descripcion {
+.kenjutsu__descripcion {
     font-size: 1rem;
     color: var(--text-dark);
 }
 
-/* Para los subtítulos de los servicios */
-.servicios__subtitulo {
-    font-size: 2rem;
-    color: var(--secondary);
-    margin-bottom: 1rem;
+.kenjutsu__imagen {
+    width: 35%;
+    height: 100%;
+    object-fit: cover;
+    border-top-left-radius: 0.5rem;
+    border-bottom-left-radius: 0.5rem;
 }
 
-
-/* Pagina de contacto */
+/* PÁGINA DE CONTACTO */
 .contacto {
     display: flex;
     flex-direction: column;
@@ -268,12 +279,10 @@ main {
 
 .contacto__titulo {
     font-size: 2rem;
-    color: var(--secondary);
 }
 
 .contacto__descripcion {
     font-size: 1.2rem;
-    color: var(--text-dark);
 }
 
 .contacto__formulario {
@@ -291,17 +300,11 @@ form {
     gap: 1rem;
 }
 
-label {
-    font-weight: bold;
-    color: var(--text-dark);
-}
-
 input, textarea, select {
     width: 100%;
     padding: 0.5rem;
     border: 1px solid #ccc;
     border-radius: 0.25rem;
-    font-size: 1rem;
 }
 
 textarea {
@@ -314,7 +317,6 @@ button {
     border: none;
     padding: 0.75rem;
     font-size: 1rem;
-    font-weight: bold;
     border-radius: 0.25rem;
     cursor: pointer;
     transition: background-color 0.3s;
@@ -323,7 +325,6 @@ button {
 button:hover {
     background-color: var(--secondary);
 }
-
 
 /* FOOTER */
 .pie {
