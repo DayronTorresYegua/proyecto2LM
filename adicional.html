@@ -21,11 +21,78 @@
 </header>
 
     <main>
-        <!-- Seccion 1 -->
+        <!-- Sección 1: Carrusel de fotos -->
+        <section class="carrusel">
+            <!-- Radio buttons ocultos -->
+            <input type="radio" name="slider" id="slide1" checked>
+            <input type="radio" name="slider" id="slide2">
+            <input type="radio" name="slider" id="slide3">
+            <input type="radio" name="slider" id="slide4">
 
-        <!-- Seccion 2 -->
+            <!-- Contenedor de imágenes -->
+            <div class="carrusel-contenedor">
+                <div class="carrusel-imagen">
+                    <img src="assets/enma2.png" alt="Imagen 1">
+                </div>
+                <div class="carrusel-imagen">
+                    <img src="assets/connor.png" alt="Imagen 2">
+                </div>
+                <div class="carrusel-imagen">
+                    <img src="assets/rin.png" alt="Imagen 3">
+                </div>
+                <div class="carrusel-imagen">
+                    <img src="assets/duncan.png" alt="Imagen 4">
+                </div>
+            </div>
 
-        <!-- Seccion 3 -->
+            <!-- Controles del carrusel -->
+            <nav class="carrusel-controles">
+                <label for="slide1"></label>
+                <label for="slide2"></label>
+                <label for="slide3"></label>
+                <label for="slide4"></label>
+            </nav>
+        </section>
+
+        <!-- Sección 2: Promociones y ofertas -->
+        <section class="galeria__promociones">
+            <h2>Promociones y Ofertas</h2>
+            <ul class="promociones__contenedor">
+                <li class="promocion">
+                    <h3>Oferta 1</h3>
+                    <p>Descuento del 20% en productos seleccionados.</p>
+                    <a href="#">Ver más</a>
+                </li>
+                <li class="promocion">
+                    <h3>Oferta 2</h3>
+                    <p>Compra 1 y lleva el 2° a mitad de precio.</p>
+                    <a href="#">Ver más</a>
+                </li>
+                <li class="promocion">
+                    <h3>Oferta 3</h3>
+                    <p>Envío gratis en compras superiores a 50€.</p>
+                    <a href="#">Ver más</a>
+                </li>
+            </ul>
+        </section>
+
+        <!-- Sección Testimonios -->
+        <section class="testimonios">
+            <h2 class="testimonios__titulo">Lo Que Dicen Nuestros Clientes</h2>
+            <article class="testimonios__carta">
+                <p class="testimonios__texto">"Un servicio increíble y atención al cliente excepcional. Volveré seguro."</p>
+                <p class="testimonios__autor">- Laura Rodríguez</p>
+            </article>
+            <article class="testimonios__carta">
+                <p class="testimonios__texto">"Productos de excelente calidad a precios justos. ¡Muy recomendable!"</p>
+                <p class="testimonios__autor">- Carlos Martínez</p>
+            </article>
+            <article class="testimonios__carta">
+                <p class="testimonios__texto">"Estoy muy contento con mi compra. El proceso fue rápido y fácil."</p>
+                <p class="testimonios__autor">- Ana López</p>
+            </article>
+        </section>
+
     </main>
     <footer class="pie">
         <nav class="pie__redes">

@@ -32,6 +32,7 @@ body {
 
 /* Contenido principal que ocupa el espacio restante */
 main {
+    padding-top: 6rem;
     flex: 1;
 }
 
@@ -317,6 +318,40 @@ main {
 }
 
 /* PÁGINA DE CONTACTO */
+/* Info de la empresa*/
+
+.contacto__empresa {
+    background-color: #ffffff; /* Fondo blanco */
+    padding: 2rem; /* Relleno interno */
+    border-radius: 0.5rem; /* Bordes redondeados */
+    box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1); /* Sombra suave */
+    width: 100%; /* Ancho completo */
+    max-width: 900px; /* Ancho máximo */
+    text-align: center; /* Alineación del texto */
+    margin-top: 2rem; /* Espaciado superior */
+}
+
+.contacto__empresa__titulo {
+    font-size: 1.8rem; /* Tamaño del título */
+    margin-bottom: 1rem; /* Espaciado inferior */
+}
+
+.contacto__empresa__descripcion {
+    font-size: 1.2rem; /* Tamaño del texto */
+    margin-bottom: 1rem; /* Espaciado inferior */
+}
+
+.contacto__empresa__lista {
+    list-style: none; /* Sin viñetas */
+    padding: 0;
+    font-size: 1rem; /* Tamaño del texto */
+}
+
+.contacto__empresa__lista li {
+    margin-bottom: 0.5rem; /* Espaciado entre elementos */
+}
+
+/* Formulario */
 .contacto {
     display: flex;
     flex-direction: column; /* Diseño en columna */
@@ -332,10 +367,6 @@ main {
 
 .contacto__titulo {
     font-size: 2rem; /* Tamaño de la fuente */
-}
-
-.contacto__descripcion {
-    font-size: 1.2rem; /* Tamaño de la fuente */
 }
 
 .contacto__formulario {
@@ -377,6 +408,121 @@ button {
 
 button:hover {
     background-color: var(--secondary); /* Cambia el color al pasar el ratón */
+}
+
+/* Página adicional */
+/* Estilos para el carrusel */
+.carrusel {
+    width: 100%;
+    max-width: 600px; /* Ajustar según el diseño */
+    margin: 2rem auto;
+    overflow: hidden;
+    position: relative;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Contenedor de las imágenes del carrusel */
+.carrusel-contenedor {
+    display: flex;
+    width: 400%; /* 4 imágenes → 100% * 4 */
+    transition: transform 0.5s ease-in-out;
+}
+
+/* Cada imagen ocupa el 25% del ancho total */
+.carrusel-imagen {
+    width: 25%;
+    flex-shrink: 0;
+}
+
+/* Ajusta las imágenes para que ocupen todo el contenedor */
+.carrusel-imagen img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Ocultar los radio buttons */
+.carrusel input {
+    display: none;
+}
+
+/* Posicionar los botones de control debajo del carrusel */
+.carrusel-controles {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+/* Botones de control */
+.carrusel-controles label {
+    width: 12px;
+    height: 12px;
+    background-color: #bbb;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+/* Cambio de color en el botón seleccionado */
+.carrusel-controles label:hover,
+.carrusel input:checked + .carrusel-controles label {
+    background-color: var(--primary);
+}
+
+/* Mueve el carrusel según el radio seleccionado */
+#slide1:checked ~ .carrusel-contenedor {
+    transform: translateX(0);
+}
+
+#slide2:checked ~ .carrusel-contenedor {
+    transform: translateX(-25%);
+}
+
+#slide3:checked ~ .carrusel-contenedor {
+    transform: translateX(-50%);
+}
+
+#slide4:checked ~ .carrusel-contenedor {
+    transform: translateX(-75%);
+}
+
+.galeria__promociones {
+    background-color: #f4f4f4;
+    padding: 2rem;
+}
+
+.promociones__contenedor {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+
+.promocion {
+    background-color: #fff;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
+}
+
+.promocion__imagen {
+    width: 100%;
+    height: 15rem;
+    object-fit: cover;
+    border-radius: 0.5rem;
+}
+
+.promocion__titulo {
+    font-size: 1.5rem;
+    margin-top: 1rem;
+    color: var(--text-dark);
+}
+
+.promocion__descripcion {
+    font-size: 1rem;
+    color: var(--text-dark);
+    margin-top: 0.5rem;
 }
 
 /* FOOTER */

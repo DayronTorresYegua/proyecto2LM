@@ -59,3 +59,25 @@ ya que seria menos eficiente hacerlo con alguna otra etiqueta
                 hasta practicantes avanzados que buscan perfeccionar su técnica.
             </p>
         </div>
+    </section>
+```
+
+- He tenido que usar la etiqueta div para poder crear un carrusel de imágenes debido a que de otra forma no quedaba bien hecho
+
+```html
+    <!-- Contenedor de imágenes -->
+    <div class="carrusel-contenedor">
+        <div class="carrusel-imagen">
+            <img src="assets/enma2.png" alt="Imagen 1">
+        </div>
+        <div class="carrusel-imagen">
+            <img src="assets/connor.png" alt="Imagen 2">
+        </div>
+        <div class="carrusel-imagen">
+            <img src="assets/rin.png" alt="Imagen 3">
+        </div>
+        <div class="carrusel-imagen">
+            <img src="assets/duncan.png" alt="Imagen 4">
+        </div>
+    </div>
+```
