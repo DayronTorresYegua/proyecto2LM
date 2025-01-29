@@ -1,31 +1,36 @@
+/* Definición de variables CSS personalizadas para colores */
 :root {
-    --primary: #56e39f;
-    --secondary: #3b2c35;
-    --text-light: #ffffff;
-    --text-dark: #333333;
+    --primary: #56e39f; /* Color primario */
+    --secondary: #3b2c35; /* Color secundario */
+    --text-light: #ffffff; /* Color de texto claro */
+    --text-dark: #333333; /* Color de texto oscuro */
 }
 
+/* Reset básico para eliminar márgenes y rellenos predeterminados */
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-    list-style: none;
+    box-sizing: border-box; /* Incluye el padding y el borde en el tamaño total del elemento */
+    list-style: none; /* Elimina los estilos de lista predeterminados */
 }
 
+/* Asegura que html y body ocupen el 100% de la altura de la ventana */
 html, body {
     height: 100%;
 }
 
+/* Estilos generales del body */
 body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
+    font-family: Arial, sans-serif; /* Fuente predeterminada */
+    line-height: 1.6; /* Espaciado entre líneas */
     display: flex;
-    flex-direction: column;
-    background-color: #ffffff;
-    color: var(--text-dark);
-    padding-top: 6rem;
+    flex-direction: column; /* Diseño en columna */
+    background-color: #ffffff; /* Fondo blanco */
+    color: var(--text-dark); /* Color de texto oscuro */
+    padding-top: 6rem; /* Espacio para la cabecera fija */
 }
 
+/* Contenido principal que ocupa el espacio restante */
 main {
     flex: 1;
 }
@@ -33,383 +38,409 @@ main {
 /* HEADER */
 .cabecera {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 2rem;
-    border-bottom: 0.25rem solid var(--text-dark);
-    background-color: var(--primary);
-    color: var(--text-light);
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 1000;
+    justify-content: space-between; /* Distribuye el espacio entre los elementos */
+    align-items: center; /* Centra verticalmente los elementos */
+    padding: 1rem 2rem; /* Relleno interno */
+    border-bottom: 0.25rem solid var(--text-dark); /* Borde inferior */
+    background-color: var(--primary); /* Fondo con color primario */
+    color: var(--text-light); /* Color de texto claro */
+    position: fixed; /* Fija la cabecera en la parte superior */
+    width: 100%; /* Ocupa todo el ancho */
+    top: 0; /* Posición en la parte superior */
+    z-index: 1000; /* Asegura que esté por encima de otros elementos */
 }
 
 .cabecera__logo {
-    width: 4.5rem;
-    transform: scale(1.5);
-    transform-origin: center center;
+    width: 4.5rem; /* Ancho del logo */
+    transform: scale(1.5); /* Escala el logo */
+    transform-origin: center center; /* Punto de origen de la transformación */
 }
 
 .cabecera__menu {
-    list-style: none;
+    list-style: none; /* Elimina los estilos de lista */
     display: flex;
-    gap: 1rem;
+    gap: 1rem; /* Espacio entre elementos del menú */
 }
 
 .cabecera__menu__enlaces {
-    text-decoration: none;
-    color: var(--text-light);
-    font-weight: bold;
-    transition: color 0.3s ease;
+    text-decoration: none; /* Elimina el subrayado de los enlaces */
+    color: var(--text-light); /* Color de texto claro */
+    font-weight: bold; /* Texto en negrita */
+    transition: color 0.3s ease; /* Transición suave del color */
 }
 
 .cabecera__menu__enlaces:hover {
-    color: #333;
+    color: #333; /* Cambia el color al pasar el ratón */
 }
+
 /* PAGINA INICIO */
 /* SECCIÓN INTRODUCCIÓN */
 .introduccion {
-    width: 60%;
-    margin: 0 auto;
-    text-align: center;
-    padding: 2rem 1rem;
-    background-color: var(--primary);
-    color: var(--text-light);
-    margin-top: 6rem;
+    width: 60%; /* Ancho del contenedor */
+    margin: 0 auto; /* Centra el contenedor */
+    text-align: center; /* Alinea el texto al centro */
+    padding: 2rem 1rem; /* Relleno interno */
+    background-color: var(--primary); /* Fondo con color primario */
+    color: var(--text-light); /* Color de texto claro */
+    margin-top: 6rem; /* Margen superior para evitar solapamiento con la cabecera */
 }
 
 .introduccion__titulo {
-    font-size: 2rem;
-    margin-bottom: 1rem;
+    font-size: 2rem; /* Tamaño de la fuente */
+    margin-bottom: 1rem; /* Margen inferior */
 }
 
 .introduccion__texto {
-    font-size: 1.2rem;
+    font-size: 1.2rem; /* Tamaño de la fuente */
+    color: var(--text-light); /* Color de texto claro */
 }
 
 /* SECCIÓN PRODUCTOS */
 .productos {
-    width: 60%;
-    margin: 0 auto;
-    padding: 2rem 1rem;
-    background-color: #f9f9f9;
-    text-align: center;
+    width: 60%; /* Ancho del contenedor */
+    margin: 0 auto; /* Centra el contenedor */
+    padding: 2rem 1rem; /* Relleno interno */
+    background-color: #f9f9f9; /* Fondo gris claro */
+    text-align: center; /* Alinea el texto al centro */
 }
 
 .productos__titulo {
-    font-size: 1.8rem;
-    margin-bottom: 2rem;
+    font-size: 1.8rem; /* Tamaño de la fuente */
+    margin-bottom: 2rem; /* Margen inferior */
+    color: var(--text-dark); /* Color de texto oscuro */
 }
 
 .productos__lista {
     display: flex;
-    flex-wrap: wrap;
-    gap: 2rem;
-    justify-content: center;
+    flex-wrap: wrap; /* Permite que los elementos se envuelvan */
+    gap: 2rem; /* Espacio entre elementos */
+    justify-content: center; /* Centra los elementos */
 }
 
 .productos__item {
-    background-color: #ffffff;
-    border: 0.2rem solid #ddd;
-    border-radius: 0.5rem;
-    padding: 1rem;
-    width: 16rem;
-    box-shadow: 0 0.25rem 0.4rem rgba(0, 0, 0, 0.1);
+    background-color: #ffffff; /* Fondo blanco */
+    border: 0.2rem solid #ddd; /* Borde gris */
+    border-radius: 0.5rem; /* Bordes redondeados */
+    padding: 1rem; /* Relleno interno */
+    width: 16rem; /* Ancho del elemento */
+    box-shadow: 0 0.25rem 0.4rem rgba(0, 0, 0, 0.1); /* Sombra */
     position: relative;
-    z-index: 1;
-    transition: transform 0.3s ease, z-index 0.3s ease;
+    z-index: 1; /* Asegura que esté por encima de otros elementos */
+    transition: transform 0.3s ease, z-index 0.3s ease; /* Transición suave */
 }
 
 .productos__item:hover {
-    transform: translateY(-0.3rem);
-    z-index: 10;
+    transform: translateY(-0.3rem); /* Efecto de levantar al pasar el ratón */
+    z-index: 10; /* Asegura que esté por encima de otros elementos */
 }
 
 .productos__imagen {
-    width: 100%;
-    height: 12.5rem;
-    object-fit: cover;
-    border-radius: 0.5rem;
+    width: 100%; /* Ancho completo */
+    height: 12.5rem; /* Altura fija */
+    object-fit: cover; /* Ajusta la imagen al contenedor */
+    border-radius: 0.5rem; /* Bordes redondeados */
 }
 
 .productos__nombre {
-    font-size: 1.5rem;
-    margin: 1rem 0;
+    font-size: 1.5rem; /* Tamaño de la fuente */
+    margin: 1rem 0; /* Margen superior e inferior */
+    color: var(--text-dark); /* Color de texto oscuro */
 }
 
 .productos__descripcion {
-    font-size: 1rem;
-    color: var(--text-dark);
+    font-size: 1rem; /* Tamaño de la fuente */
+    color: var(--text-dark); /* Color de texto oscuro */
 }
 
 /* SECCIÓN TESTIMONIOS */
 .testimonios {
-    width: 60%;
-    margin: 0 auto;
-    padding: 2rem 1rem;
-    text-align: center;
-    border-radius: 0.25rem;
-    background-color: var(--secondary);
-    color: var(--text-light);
-    margin-bottom: 2rem;
+    width: 60%; /* Ancho del contenedor */
+    margin: 0 auto; /* Centra el contenedor */
+    padding: 2rem 1rem; /* Relleno interno */
+    text-align: center; /* Alinea el texto al centro */
+    border-radius: 0.25rem; /* Bordes redondeados */
+    background-color: var(--secondary); /* Fondo con color secundario */
+    color: var(--text-light); /* Color de texto claro */
+    margin-bottom: 2rem; /* Margen inferior */
 }
 
 .testimonios__titulo {
-    font-size: 1.8rem;
-    margin-bottom: 2rem;
+    font-size: 1.8rem; /* Tamaño de la fuente */
+    margin-bottom: 2rem; /* Margen inferior */
+    color: var(--text-light); /* Color de texto claro */
 }
 
 .testimonios__carta {
-    background-color: rgba(0, 0, 0, 0.2);
-    border-radius: 0.5rem;
-    padding: 1.5rem;
-    margin-bottom: 1rem;
-    box-shadow: 0 0.25rem 0.4rem rgba(0, 0, 0, 0.1);
+    background-color: rgba(0, 0, 0, 0.2); /* Fondo semitransparente */
+    border-radius: 0.5rem; /* Bordes redondeados */
+    padding: 1.5rem; /* Relleno interno */
+    margin-bottom: 1rem; /* Margen inferior */
+    box-shadow: 0 0.25rem 0.4rem rgba(0, 0, 0, 0.1); /* Sombra */
 }
 
 .testimonios__texto {
-    font-size: 1.2rem;
-    margin-bottom: 0.5rem;
+    font-size: 1.2rem; /* Tamaño de la fuente */
+    margin-bottom: 0.5rem; /* Margen inferior */
+    color: var(--text-light); /* Color de texto claro */
 }
 
 .testimonios__autor {
-    font-size: 1rem;
-    font-style: italic;
+    font-size: 1rem; /* Tamaño de la fuente */
+    font-style: italic; /* Texto en cursiva */
+    color: var(--text-light); /* Color de texto claro */
 }
 
 /* PAGINA SERVICIOS */
 /* SECCIÓN SERVICIOS */
 .servicios {
-    padding: 2rem 1rem;
-    background-color: #f4f4f4;
+    padding: 2rem 1rem; /* Relleno interno */
+    background-color: #f4f4f4; /* Fondo gris claro */
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    flex-direction: column; /* Diseño en columna */
+    align-items: center; /* Centra los elementos horizontalmente */
 }
 
 /* Introduccion*/
 .servicios__introduccion {
-    text-align: center;
-    margin-bottom: 2rem;
+    text-align: center; /* Alinea el texto al centro */
+    margin-bottom: 2rem; /* Margen inferior */
 }
 
 .servicios__titulo {
-    font-size: 2.5rem;
-    color: var(--secondary);
+    font-size: 2.5rem; /* Tamaño de la fuente */
+    color: var(--secondary); /* Color de texto secundario */
 }
 
 .servicios__descripcion {
-    font-size: 1.2rem;
+    font-size: 1.2rem; /* Tamaño de la fuente */
+    color: var(--text-dark); /* Color de texto oscuro */
 }
 
 /* Personalizacion */
 
 .servicios__personalizacion {
-    width: 70%;
-    background-color: #ffffff;
-    border: 0.2rem solid #ddd;
-    border-radius: 0.5rem;
-    margin-bottom: 2rem;
-    box-shadow: 0 0.25rem 0.4rem rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 70%; /* Ancho del contenedor */
+    background-color: #ffffff; /* Fondo blanco */
+    border: 0.2rem solid #ddd; /* Borde gris */
+    border-radius: 0.5rem; /* Bordes redondeados */
+    margin-bottom: 2rem; /* Margen inferior */
+    box-shadow: 0 0.25rem 0.4rem rgba(0, 0, 0, 0.1); /* Sombra */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transición suave */
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: center; /* Centra los elementos horizontalmente */
+    align-items: center; /* Centra los elementos verticalmente */
     position: relative;
 }
 
-
 .servicios__personalizacion__imagen {
-    width: 100%;
-    object-fit: contain;
-    border-radius: 0.5rem;
+    width: 100%; /* Ancho completo */
+    object-fit: contain; /* Ajusta la imagen al contenedor */
+    border-radius: 0.5rem; /* Bordes redondeados */
 }
 
-/* Mantenimiento */
-
+/* Mantenimiento - Estilo Diferente */
 .servicios__mantenimiento {
-    width: 70%;
-    background-color: #ffffff;
-    border: 0.2rem solid #ddd;
-    border-radius: 0.5rem;
-    padding: 2rem;
-    margin: 0 auto 2rem auto; /* Centrar horizontalmente */
-    box-shadow: 0 0.25rem 0.4rem rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 70%; /* Ancho del contenedor */
+    background-color: #3b2c35; /* Fondo oscuro */
+    color: white; /* Texto claro para contraste */
+    border-radius: 1rem; /* Bordes más redondeados */
+    padding: 2rem; /* Relleno interno */
+    margin: 0 auto 2rem auto; /* Margen inferior y centrado */
+    box-shadow: 0 0.3rem 0.5rem rgba(0, 0, 0, 0.2); /* Sombra */
+    display: flex;
+    flex-direction: column; /* Diseño en columna */
+    align-items: center; /* Centra los elementos horizontalmente */
+    text-align: center; /* Alinea el texto al centro */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transición suave */
+}
+
+.servicios__mantenimiento__imagen {
+    width: 50%; /* Ancho de la imagen */
+    border-radius: 50%; /* Bordes redondeados para un efecto circular */
+    border: 0.2rem solid white; /* Borde blanco */
+    margin-bottom: 1rem; /* Margen inferior */
+}
+
+.servicios__mantenimiento__titulo {
+    font-size: 2.5rem; /* Tamaño de la fuente */
+    color: var(--text-light); /* Color de texto secundario */
+}
+
+.servicios__mantenimiento__descripcion {
+    font-size: 1.2rem; /* Tamaño de la fuente */
+    color: var(--text-light); /* Color de texto secundario */
 }
 
 /* Kenjutsu */
 
 .servicios__kenjutsu {
     display: flex;
-    align-items: center;
-    width: 70%;
-    background-color: #ffffff;
-    border: 0.2rem solid #ddd;
-    border-radius: 0.5rem;
-    box-shadow: 0 0.25rem 0.4rem rgba(0, 0, 0, 0.1);
-    overflow: hidden;
+    align-items: center; /* Centra los elementos verticalmente */
+    width: 70%; /* Ancho del contenedor */
+    background-color: #ffffff; /* Fondo blanco */
+    border: 0.2rem solid #ddd; /* Borde gris */
+    border-radius: 0.5rem; /* Bordes redondeados */
+    box-shadow: 0 0.25rem 0.4rem rgba(0, 0, 0, 0.1); /* Sombra */
+    overflow: hidden; /* Oculta el contenido que sobresale */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transición suave */
 }
 
 .servicios__personalizacion:hover,
 .servicios__mantenimiento:hover,
-.servicios__kenjutsu:hover{
-    transform: translateY(-0.3rem);
-    box-shadow: 0 0.5rem 0.6rem rgba(0, 0, 0, 0.2);
+.servicios__kenjutsu:hover {
+    transform: translateY(-0.3rem); /* Efecto de levantar al pasar el ratón */
+    box-shadow: 0 0.5rem 0.6rem rgba(0, 0, 0, 0.2); /* Sombra más pronunciada */
 }
 
 .kenjutsu__texto {
-    width: 65%;
-    padding: 2rem;
-    text-align: left;
+    width: 65%; /* Ancho del texto */
+    padding: 2rem; /* Relleno interno */
+    text-align: left; /* Alinea el texto a la izquierda */
+    color: var(--text-dark);
 }
 
 .kenjutsu__titulo {
-    font-size: 1.8rem;
-    margin-bottom: 0.5rem;
+    font-size: 1.8rem; /* Tamaño de la fuente */
+    margin-bottom: 0.5rem; /* Margen inferior */
 }
 
 .kenjutsu__descripcion {
-    font-size: 1rem;
+    font-size: 1rem; /* Tamaño de la fuente */
 }
 
 .kenjutsu__imagen {
-    width: 35%;
-    height: 100%;
-    object-fit: cover;
-    border-top-left-radius: 0.5rem;
-    border-bottom-left-radius: 0.5rem;
+    width: 35%; /* Ancho de la imagen */
+    height: 100%; /* Altura completa */
+    object-fit: cover; /* Ajusta la imagen al contenedor */
+    border-top-left-radius: 0.5rem; /* Bordes redondeados */
+    border-bottom-left-radius: 0.5rem; /* Bordes redondeados */
 }
 
 /* PÁGINA DE CONTACTO */
 .contacto {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 2rem;
-    background-color: #f9f9f9;
+    flex-direction: column; /* Diseño en columna */
+    align-items: center; /* Centra los elementos horizontalmente */
+    padding: 2rem; /* Relleno interno */
+    background-color: #f9f9f9; /* Fondo gris claro */
 }
 
 .contacto__info {
-    text-align: center;
-    margin-bottom: 2rem;
+    text-align: center; /* Alinea el texto al centro */
+    margin-bottom: 2rem; /* Margen inferior */
 }
 
 .contacto__titulo {
-    font-size: 2rem;
+    font-size: 2rem; /* Tamaño de la fuente */
 }
 
 .contacto__descripcion {
-    font-size: 1.2rem;
+    font-size: 1.2rem; /* Tamaño de la fuente */
 }
 
 .contacto__formulario {
-    background-color: #ffffff;
-    padding: 2rem;
-    border-radius: 0.5rem;
-    box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
-    width: 100%;
-    max-width: 600px;
+    background-color: #ffffff; /* Fondo blanco */
+    padding: 2rem; /* Relleno interno */
+    border-radius: 0.5rem; /* Bordes redondeados */
+    box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1); /* Sombra */
+    width: 100%; /* Ancho completo */
+    max-width: 600px; /* Ancho máximo */
 }
 
 form {
     display: flex;
-    flex-direction: column;
-    gap: 1rem;
+    flex-direction: column; /* Diseño en columna */
+    gap: 1rem; /* Espacio entre elementos */
 }
 
 input, textarea, select {
-    width: 100%;
-    padding: 0.5rem;
-    border: 1px solid #ccc;
-    border-radius: 0.25rem;
+    width: 100%; /* Ancho completo */
+    padding: 0.5rem; /* Relleno interno */
+    border: 1px solid #ccc; /* Borde gris */
+    border-radius: 0.25rem; /* Bordes redondeados */
 }
 
 textarea {
-    resize: vertical;
+    resize: vertical; /* Permite redimensionar verticalmente */
 }
 
 button {
-    background-color: var(--primary);
-    color: var(--text-light);
-    border: none;
-    padding: 0.75rem;
-    font-size: 1rem;
-    border-radius: 0.25rem;
-    cursor: pointer;
-    transition: background-color 0.3s;
+    background-color: var(--primary); /* Fondo con color primario */
+    color: var(--text-light); /* Color de texto claro */
+    border: none; /* Sin borde */
+    padding: 0.75rem; /* Relleno interno */
+    font-size: 1rem; /* Tamaño de la fuente */
+    border-radius: 0.25rem; /* Bordes redondeados */
+    cursor: pointer; /* Cambia el cursor al pasar el ratón */
+    transition: background-color 0.3s; /* Transición suave */
 }
 
 button:hover {
-    background-color: var(--secondary);
+    background-color: var(--secondary); /* Cambia el color al pasar el ratón */
 }
 
 /* FOOTER */
 .pie {
-    background-color: var(--primary);
-    color: var(--text-light);
-    text-align: center;
-    padding: 1rem;
+    background-color: var(--primary); /* Fondo con color primario */
+    color: var(--text-light); /* Color de texto claro */
+    text-align: center; /* Alinea el texto al centro */
+    padding: 1rem; /* Relleno interno */
 }
 
 .pie__redes {
     display: flex;
-    justify-content: center;
-    gap: 1rem;
-    flex-wrap: wrap;
+    justify-content: center; /* Centra los elementos horizontalmente */
+    gap: 1rem; /* Espacio entre elementos */
+    flex-wrap: wrap; /* Permite que los elementos se envuelvan */
 }
 
 .pie__redes__enlace {
-    text-decoration: none;
-    color: var(--text-light);
-    font-size: 1.2rem;
+    text-decoration: none; /* Elimina el subrayado de los enlaces */
+    color: var(--text-light); /* Color de texto claro */
+    font-size: 1.2rem; /* Tamaño de la fuente */
     display: flex;
-    align-items: center;
-    gap: 0.5rem;
+    align-items: center; /* Centra los elementos verticalmente */
+    gap: 0.5rem; /* Espacio entre elementos */
 }
 
 .pie__redes__enlace img {
-    width: 1.25rem;
+    width: 1.25rem; /* Ancho de la imagen */
 }
 
 /* RESPONSIVIDAD */
 @media (max-width: 768px) {
     .productos__item {
-        width: 100%;
-        margin: 0 auto;
+        width: 100%; /* Ancho completo en pantallas pequeñas */
+        margin: 0 auto; /* Centra el elemento */
     }
 
     .cabecera__menu {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 0.5rem;
+        flex-wrap: wrap; /* Permite que los elementos se envuelvan */
+        justify-content: center; /* Centra los elementos horizontalmente */
+        gap: 0.5rem; /* Espacio entre elementos */
     }
 
     .pie__redes {
-        gap: 0.5rem;
-        flex-wrap: wrap;
+        gap: 0.5rem; /* Espacio entre elementos */
+        flex-wrap: wrap; /* Permite que los elementos se envuelvan */
     }
 }
 
 @media (max-width: 480px) {
     .introduccion__titulo {
-        font-size: 1.8rem;
+        font-size: 1.8rem; /* Tamaño de la fuente más pequeño */
     }
 
     .productos__nombre {
-        font-size: 1.2rem;
+        font-size: 1.2rem; /* Tamaño de la fuente más pequeño */
     }
 
     .testimonios__titulo {
-        font-size: 1.5rem;
+        font-size: 1.5rem; /* Tamaño de la fuente más pequeño */
     }
 
     .testimonios__carta {
         padding: 1rem;
-    }
 
-    .pie__redes__enlace {
-        font-size: 1rem;
     }
-}
+}/* Relleno interno
