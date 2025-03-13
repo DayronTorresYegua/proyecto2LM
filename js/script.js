@@ -164,35 +164,19 @@ function manejarPaginaServicios() {
                 if (descripcionKenjutsu) {
                     console.log("Encontrada descripción - creando botón");
 
-                    // Crear el botón
-                    const botonKenjutsu = document.createElement("a");
+                    // Crear el botón utilizando la etiqueta button para aprovechar los estilos CSS existentes
+                    const botonKenjutsu = document.createElement("button");
                     botonKenjutsu.classList.add("kenjutsu__boton");
-                    botonKenjutsu.href = "#";
                     botonKenjutsu.textContent = "Más información";
 
-                    // Aplicar estilos al botón con los colores de la página
-                    botonKenjutsu.style.display = "inline-block";
-                    botonKenjutsu.style.backgroundColor = "#56e39f"; // --primary
-                    botonKenjutsu.style.color = "#3b2c35"; // --secondary
-                    botonKenjutsu.style.padding = "10px 20px";
-                    botonKenjutsu.style.margin = "15px 0";
-                    botonKenjutsu.style.borderRadius = "5px";
-                    botonKenjutsu.style.textDecoration = "none";
-                    botonKenjutsu.style.fontWeight = "bold";
-                    botonKenjutsu.style.boxShadow = "0 2px 4px rgba(0,0,0,0.2)";
+                    // Añadir un pequeño margen para separarlo de la descripción
+                    botonKenjutsu.style.marginTop = "15px";
 
-                    // Efectos de hover
-                    botonKenjutsu.addEventListener("mouseenter", function() {
-                        this.style.backgroundColor = "#3b2c35"; // --secondary
-                        this.style.color = "#56e39f"; // --primary
-                        this.style.transform = "scale(1.05)";
-                        this.style.transition = "all 0.3s ease";
-                    });
-
-                    botonKenjutsu.addEventListener("mouseleave", function() {
-                        this.style.backgroundColor = "#56e39f"; // --primary
-                        this.style.color = "#3b2c35"; // --secondary
-                        this.style.transform = "scale(1)";
+                    // Añadir funcionalidad al botón (opcional)
+                    botonKenjutsu.addEventListener("click", function(e) {
+                        e.preventDefault();
+                        console.log("Botón de Kenjutsu clickeado");
+                        // Aquí puedes añadir la funcionalidad que desees
                     });
 
                     // Añadir el botón después de la descripción
