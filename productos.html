@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Página de Inicio</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <script defer src="js/script.js"></script>
+</head>
+<body>
+<header class="cabecera">
+  <a href="inicio.html">
+    <img class="cabecera__logo" src="assets/logo.png" alt="Logo">
+  </a>
+  <nav>
+    <ul class="cabecera__menu">
+      <li><a class="cabecera__menu__enlaces" href="adicional.html">Adicional</a></li>
+      <li><a class="cabecera__menu__enlaces" href="servicios.html">Servicios</a></li>
+      <li><a class="cabecera__menu__enlaces" href="contacto.html">Contacto</a></li>
+    </ul>
+  </nav>
+</header>
+<main>
+  <div class="contenedor-principal">
+    <!-- Filtros -->
+    <section class="filtros">
+      <h2 class="filtros__titulo">Filtrar por categoría</h2>
+      <label><input type="checkbox" class="filtro" value="anime"> Katanas de Anime</label>
+      <label><input type="checkbox" class="filtro" value="clasica"> Katanas Clásicas</label>
+    </section>
+
+    <!-- Sección Productos -->
+    <section class="nuevo__productos">
+      <h2 class="nuevo__productos__titulo">Listado de productos</h2>
+      <ul class="nuevo__productos__lista">
+        <!-- Katanas de Anime -->
+        <li class="nuevo__productos__item" data-categoria="anime">
+          <img class="nuevo__productos__imagen" src="assets/shusui.png" alt="Shusui">
+          <h3 class="nuevo__productos__nombre">Shusui</h3>
+          <p class="nuevo__productos__descripcion">Katana Shusui de Zoro.</p>
+        </li>
+        <li class="nuevo__productos__item" data-categoria="anime">
+          <img class="nuevo__productos__imagen" src="assets/enma.png" alt="Enma">
+          <h3 class="nuevo__productos__nombre">Enma</h3>
+          <p class="nuevo__productos__descripcion">Katana Enma de Zoro.</p>
+        </li>
+        <li class="nuevo__productos__item" data-categoria="anime">
+          <img class="nuevo__productos__imagen" src="assets/sandai-kitetsu.png" alt="Sandai Kitetsu">
+          <h3 class="nuevo__productos__nombre">Sandai Kitetsu</h3>
+          <p class="nuevo__productos__descripcion">Katana Sandai Kitetsu de Zoro.</p>
+        </li>
+        <li class="nuevo__productos__item" data-categoria="anime">
+          <img class="nuevo__productos__imagen" src="assets/wado-ichimonji.png" alt="Wado Ichimonji">
+          <h3 class="nuevo__productos__nombre">Wado Ichimonji</h3>
+          <p class="nuevo__productos__descripcion">Katana Wado Ichimonji de Zoro.</p>
+        </li>
+        <li class="nuevo__productos__item" data-categoria="anime">
+          <img class="nuevo__productos__imagen" src="assets/yubashiri.png" alt="Yubashiri">
+          <h3 class="nuevo__productos__nombre">Yubashiri</h3>
+          <p class="nuevo__productos__descripcion">Katana Yubashiri de Zoro.</p>
+        </li>
+
+        <!-- Katanas Clásicas -->
+        <li class="nuevo__productos__item" data-categoria="clasica">
+          <img class="nuevo__productos__imagen" src="assets/muramasa.png" alt="Muramasa">
+          <h3 class="nuevo__productos__nombre">Muramasa</h3>
+          <p class="nuevo__productos__descripcion">Legendaria katana Muramasa.</p>
+        </li>
+        <li class="nuevo__productos__item" data-categoria="clasica">
+          <img class="nuevo__productos__imagen" src="assets/masamune.png" alt="Masamune">
+          <h3 class="nuevo__productos__nombre">Masamune</h3>
+          <p class="nuevo__productos__descripcion">Famosa katana Masamune.</p>
+        </li>
+        <li class="nuevo__productos__item" data-categoria="clasica">
+          <img class="nuevo__productos__imagen" src="assets/hattori.png" alt="Hattori">
+          <h3 class="nuevo__productos__nombre">Hattori</h3>
+          <p class="nuevo__productos__descripcion">Katana tradicional Hattori.</p>
+        </li>
+        <li class="nuevo__productos__item" data-categoria="clasica">
+          <img class="nuevo__productos__imagen" src="assets/kogarasu.png" alt="Kogarasu">
+          <h3 class="nuevo__productos__nombre">Kogarasu</h3>
+          <p class="nuevo__productos__descripcion">Antigua katana Kogarasu Maru.</p>
+        </li>
+      </ul>
+    </section>
+  </div>
+</main>
+<footer class="pie">
+  <nav class="pie__redes">
+    <a class="pie__redes__enlace" href="https://facebook.com">
+      <img src="assets/facebook.png" alt="Facebook"> Facebook</a>
+    <a class="pie__redes__enlace" href="https://twitter.com">
+      <img src="assets/twitter.png" alt="Twitter"> Twitter</a>
+    <a class="pie__redes__enlace" href="https://instagram.com">
+      <img src="assets/instagram-logo.png" alt="Instagram"> Instagram</a>
+    <a class="pie__redes__enlace" href="https://whatsapp.com">
+      <img src="assets/whatsapp.png" alt="WhatsApp"> WhatsApp</a>
+  </nav>
+</footer>
+</body>
+</html>
