@@ -1,5 +1,32 @@
 # Instrucciones del proyecto
 
+## Uso de JavaScript
+
+### Lenguajes de script de cliente y JavaScript
+
+- Los lenguajes de script de cliente se usan en las páginas web para hacerlas más interactivas. JavaScript es el más famoso porque funciona en todos los navegadores y permite hacer cosas como validar formularios, animaciones y cambios en la página sin necesidad de recargarla.
+
+### Características de JavaScript
+
+- Es fácil de usar porque no necesita instalar nada extra, solo un navegador.
+
+- Funciona con HTML y CSS para mejorar el diseño y la funcionalidad.
+
+- Permite hacer programas que reaccionan a lo que hace el usuario (por ejemplo, cuando hace clic en un botón).
+
+- Se usa mucho en el desarrollo web, tanto en el lado del cliente como en el servidor (con Node.js).
+
+### Sintaxis moderna de la versión ES6
+
+- **Variables:** Ahora se usa ***let*** y ***const*** en lugar de ***var***
+- **Funciones flecha:** Se usan para escribir funciones de forma más corta
+```js
+const suma = (a, b) => a + b;
+console.log(suma(2, 3));
+```
+- **Métodos útiles:** El uso de ***.map()***, ***.filter()***, ***.reduce()*** para trabajar con arrays más fácilmente
+
+
 ## Descripción
 **Bushido Blades** es un proyecto web dedicado a ofrecer una experiencia única para los entusiastas de las katanas y la cultura samurái. 
 A través de una plataforma visualmente atractiva y fácil de navegar, el sitio web proporciona información sobre los servicios que ofrece la tienda, 
