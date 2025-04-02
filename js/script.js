@@ -125,7 +125,7 @@ function manejarPaginaServicios() {
 
 document.addEventListener("DOMContentLoaded", function() {
     const filtros = document.querySelectorAll(".filtro");
-    const productos = document.querySelectorAll(".nuevo__productos__item"); // Cambié la clase aquí
+    const productos = document.querySelectorAll(".nuevo__productos__item");
 
     filtros.forEach(filtro => {
         filtro.addEventListener("change", () => {
@@ -146,5 +146,65 @@ document.addEventListener("DOMContentLoaded", function() {
                 producto.classList.add("oculto");
             }
         });
+    }
+});
+
+
+document.addEventListener("DOMContentLoaded", () => {
+    const form = document.querySelector("form");
+    const inputs = form.querySelectorAll("input, textarea, select");
+
+    const errorMessages = {
+        "nombre": "El nombre debe de tener al menos 3 letras",
+        "email": "Ingresa un correo electrónico válido. EJ: ejemplo@gmail.com",
+        "telefono": "El teléfono debe contener entre 9 y 15 dígitos.",
+        "asunto": "El asunto no puede estar vacío.",
+        "mensaje": "El mensaje debe tener al menos 10 caracteres.",
+        "preferencia": "Selecciona una opción de contacto."
+    };
+
+    form.addEventListener("submit", (event) => {
+        event.preventDefault();
+        let isValid = true;
+
+        inputs.forEach(input => {
+            if (!validateInput(input)) {
+                isValid = false;
+            }
+        });
+
+        if (isValid) {
+            showSuccess("Formulario enviado correctamente");
+            form.reset();
+        }
+    });
+
+    form.addEventListener("input", (event) => {
+        validateInput(event.target);
+    }, true); // Bubble phase
+
+    function validateInput(input) {
+        const errorMessage = input.nextElementSibling;
+        if (errorMessage && errorMessage.classList.contains("error-message")) {
+            errorMessage.remove();
+        }
+
+        if (!input.checkValidity()) {
+            const customMessage = errorMessages[input.name] || "Campo inválido.";
+            showError(input, customMessage);
+            return false;
+        }
+        return true;
+    }
+
+    function showError(input, message) {
+        const error = document.createElement("span");
+        error.classList.add("error-message");
+        error.textContent = message;
+        input.insertAdjacentElement("afterend", error);
+    }
+
+    function showSuccess(message) {
+        alert(message); // Puedes cambiar esto por otro método visual
     }
 });
