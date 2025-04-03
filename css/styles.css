@@ -708,3 +708,67 @@ Filtros
 .filtros input[type="checkbox"]:checked {
     transform: scale(1.2);
 }
+
+
+/* Estilos para la galería */
+.galeria {
+    width: 90%;
+    margin: 2rem auto;
+    padding: 2rem 1rem;
+    background-color: #f9f9f9;
+    text-align: center;
+    border-radius: 0.5rem;
+    box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
+}
+
+.galeria__lista {
+    display: flex;
+    gap: 1rem;
+    padding: 0;
+    list-style: none;
+    justify-content: center;
+    overflow-x: auto;
+}
+
+.galeria__item {
+    flex: 0 0 auto;
+}
+
+.galeria__imagen {
+    width: 250px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 0.5rem;
+    cursor: move;
+}
+
+.agregar-imagen {
+    background-color: var(--primary);
+    color: var(--text-light);
+    border: none;
+    padding: 0.75rem;
+    font-size: 1rem;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.agregar-imagen:hover {
+    background-color: var(--secondary);
+}
+
+/* Estilos para el botón de eliminar */
+.eliminar-imagen {
+    background-color: var(--secondary);
+    color: var(--text-light);
+    border: none;
+    padding: 0.75rem;
+    font-size: 1rem;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.eliminar-imagen:hover {
+    background-color: var(--primary);
+}

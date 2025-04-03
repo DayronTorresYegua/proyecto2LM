@@ -123,6 +123,7 @@ function manejarPaginaServicios() {
 
 // Eventos
 
+// Filtro
 document.addEventListener("DOMContentLoaded", function() {
     const filtros = document.querySelectorAll(".filtro");
     const productos = document.querySelectorAll(".nuevo__productos__item");
@@ -149,7 +150,7 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 });
 
-
+// Formulario dinamico
 document.addEventListener("DOMContentLoaded", () => {
     const form = document.querySelector("form");
     const inputs = form.querySelectorAll("input, textarea, select");
@@ -207,4 +208,52 @@ document.addEventListener("DOMContentLoaded", () => {
     function showSuccess(message) {
         alert(message); // Puedes cambiar esto por otro método visual
     }
+});
+
+document.addEventListener("DOMContentLoaded", function() {
+    const galeriaLista = document.getElementById("galeria-lista");
+    const botonAgregar = document.getElementById("agregar-imagen");
+
+    // Función para agregar imagen
+    function agregarImagen() {
+        // Pedir la URL de la nueva imagen al usuario
+        const urlImagen = prompt("Introduce la URL de la imagen:");
+
+        if (urlImagen) {
+            const nuevaImagen = document.createElement("li");
+            nuevaImagen.classList.add("galeria__item");
+
+            // Crear el elemento de imagen
+            const img = document.createElement("img");
+            img.classList.add("galeria__imagen");
+            img.src = urlImagen;
+            img.alt = "Imagen de galería";
+
+            // Crear el botón de eliminar
+            const botonEliminar = document.createElement("button");
+            botonEliminar.classList.add("eliminar-imagen");
+            botonEliminar.textContent = "Eliminar";
+            botonEliminar.addEventListener("click", function() {
+                nuevaImagen.remove();
+            });
+
+            // Añadir la imagen y el botón de eliminar a la nueva imagen
+            nuevaImagen.appendChild(img);
+            nuevaImagen.appendChild(botonEliminar);
+
+            // Agregar la nueva imagen al contenedor de la galería
+            galeriaLista.appendChild(nuevaImagen);
+        }
+    }
+
+    // Función para eliminar imagen (ya lo manejamos en el botón de eliminar por cada imagen)
+    galeriaLista.addEventListener("click", function(event) {
+        if (event.target.classList.contains("eliminar-imagen")) {
+            const imagen = event.target.closest(".galeria__item");
+            imagen.remove();
+        }
+    });
+
+    // Añadir el evento al botón de agregar imagen
+    botonAgregar.addEventListener("click", agregarImagen);
 });

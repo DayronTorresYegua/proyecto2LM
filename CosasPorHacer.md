@@ -1,4 +1,0 @@
-- Para el formulario:
-  - Prevenir default
-  - Validación de errores dentro del mismo Script 
-  - En vez de tenerla la validación de patrones en el html hacerlo en el script
