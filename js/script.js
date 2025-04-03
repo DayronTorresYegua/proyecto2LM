@@ -1,3 +1,4 @@
+
 function ejecutarCuandoEsteListo(fn) {
     if (document.readyState === "complete" || document.readyState === "interactive") {
         fn();
@@ -123,7 +124,6 @@ function manejarPaginaServicios() {
 
 // Eventos
 
-// Filtro
 document.addEventListener("DOMContentLoaded", function() {
     const filtros = document.querySelectorAll(".filtro");
     const productos = document.querySelectorAll(".nuevo__productos__item");
@@ -150,63 +150,78 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 });
 
-// Formulario dinamico
 document.addEventListener("DOMContentLoaded", () => {
     const form = document.querySelector("form");
-    const inputs = form.querySelectorAll("input, textarea, select");
+    const inputs = form.querySelectorAll("input, select");
 
-    const errorMessages = {
-        "nombre": "El nombre debe de tener al menos 3 letras",
-        "email": "Ingresa un correo electrónico válido. EJ: ejemplo@gmail.com",
-        "telefono": "El teléfono debe contener entre 9 y 15 dígitos.",
-        "asunto": "El asunto no puede estar vacío.",
-        "mensaje": "El mensaje debe tener al menos 10 caracteres.",
-        "preferencia": "Selecciona una opción de contacto."
-    };
+    inputs.forEach(input => {
+        input.addEventListener("blur", () => validateField(input));
+        input.addEventListener("input", () => validateField(input));
+    });
 
     form.addEventListener("submit", (event) => {
         event.preventDefault();
         let isValid = true;
 
         inputs.forEach(input => {
-            if (!validateInput(input)) {
+            if (!validateField(input)) {
                 isValid = false;
             }
         });
 
         if (isValid) {
-            showSuccess("Formulario enviado correctamente");
+            alert("Formulario enviado correctamente");
             form.reset();
+            clearErrors();
         }
     });
 
-    form.addEventListener("input", (event) => {
-        validateInput(event.target);
-    }, true); // Bubble phase
-
-    function validateInput(input) {
-        const errorMessage = input.nextElementSibling;
-        if (errorMessage && errorMessage.classList.contains("error-message")) {
-            errorMessage.remove();
+    function validateField(input) {
+        let value = input.value.trim();
+        let errorSpan = input.nextElementSibling;
+        if (!errorSpan || !errorSpan.classList.contains("error-message")) {
+            errorSpan = document.createElement("span");
+            errorSpan.classList.add("error-message");
+            input.insertAdjacentElement("afterend", errorSpan);
         }
 
-        if (!input.checkValidity()) {
-            const customMessage = errorMessages[input.name] || "Campo inválido.";
-            showError(input, customMessage);
+        let isValid = true;
+        let errorMessage = "";
+
+        switch (input.id) {
+            case "nombre":
+                isValid = value.length >= 3;
+                errorMessage = "El nombre debe tener al menos 3 letras.";
+                break;
+            case "email":
+                isValid = value.includes("@") && value.includes(".");
+                errorMessage = "Ingresa un correo electrónico válido. EJ: example@gmail.com";
+                break;
+            case "telefono":
+                isValid = /^\d{9,15}$/.test(value);
+                errorMessage = "El teléfono debe tener entre 9 y 15 números.";
+                break;
+            case "asunto":
+                isValid = value !== "";
+                errorMessage = "El asunto no puede estar vacío.";
+                break;
+            case "preferencia":
+                isValid = value !== "";
+                errorMessage = "Selecciona una opción.";
+                break;
+        }
+
+        if (!isValid) {
+            errorSpan.textContent = errorMessage;
             return false;
+        } else {
+            errorSpan.textContent = "";
+            return true;
         }
-        return true;
     }
 
-    function showError(input, message) {
-        const error = document.createElement("span");
-        error.classList.add("error-message");
-        error.textContent = message;
-        input.insertAdjacentElement("afterend", error);
-    }
-
-    function showSuccess(message) {
-        alert(message); // Puedes cambiar esto por otro método visual
+    function clearErrors() {
+        document.querySelectorAll(".error-message").forEach(error => error.textContent = "");
     }
 });
 
