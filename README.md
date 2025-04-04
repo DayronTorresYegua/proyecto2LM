@@ -1,6 +1,6 @@
 # Instrucciones del proyecto
 
-## Uso de JavaScript
+## 1. Uso de JavaScript (ES6):
 
 ### Lenguajes de script de cliente y JavaScript
 
@@ -98,10 +98,11 @@ ya que seria menos eficiente hacerlo con alguna otra etiqueta
     </div>
 ```
 
+## 2. Manipulación del DOM:
 
-# Funcionalidades de la Página
+### Funcionalidades de la Página
 
-## 1. Agregar Productos (`agregarKatana`)
+### 1. Agregar Productos (`agregarKatana`)
 
 Esta funcionalidad permite añadir dinámicamente productos (katanas) a una lista de productos en la página. El script crea elementos HTML con la información del producto y los agrega a una lista existente.
 
@@ -119,7 +120,7 @@ Mostrar productos de forma dinámica sin tener que codificarlos directamente en 
 
 ---
 
-## 2. Gestión de Página de Contacto (`manejarPaginaContacto`)
+### 2. Gestión de Página de Contacto (`manejarPaginaContacto`)
 
 Esta funcionalidad aplica estilos específicos a elementos de la página de contacto para mejorar su presentación visual.
 
@@ -139,7 +140,7 @@ Esta funcionalidad aplica estilos específicos a elementos de la página de cont
 
 ---
 
-## 3. Gestión de Promociones (`manejarPromociones`)
+### 3. Gestión de Promociones (`manejarPromociones`)
 
 Esta funcionalidad permite manipular dinámicamente las promociones mostradas en la página, específicamente eliminando una promoción concreta.
 
@@ -157,7 +158,7 @@ Esta funcionalidad permite manipular dinámicamente las promociones mostradas en
 
 ---
 
-## 4. Gestión de Página de Servicios (`manejarPaginaServicios`)
+### 4. Gestión de Página de Servicios (`manejarPaginaServicios`)
 
 Esta funcionalidad añade un botón "Más información" a la sección de Kenjutsu en la página de servicios adicionales.
 
@@ -174,3 +175,56 @@ Esta funcionalidad añade un botón "Más información" a la sección de Kenjuts
 
 **Ventaja:**
 - Mejora la experiencia del usuario añadiendo interactividad y acceso a más información sobre el servicio de Kenjutsu.
+
+## 3. Funcionalidades Interactivas:
+
+### Galería interactiva
+
+
+
+### Formulario con validación
+
+#### **Detectar eventos en los campos**
+- Cada campo del formulario (`input` y `select`) tiene dos eventos asociados:
+    - `blur`: Se ejecuta cuando el usuario sale del campo.
+    - `input`: Se activa cuando el usuario escribe.
+- Estos eventos llaman a la función `validateField()`, que verifica si el valor ingresado es correcto.
+
+####  **Validación de cada campo**
+La función `validateField(input)`:
+- Obtiene el valor del campo y elimina espacios innecesarios.
+- Si el campo no tiene un mensaje de error asociado, lo crea (`<span class="error-message">`).
+- Según el `id` del campo, aplica una validación específica:
+    - **Nombre:** Mínimo 3 caracteres.
+    - **Email:** Debe contener `@` y `.`.
+    - **Teléfono:** Debe tener entre 9 y 15 números.
+    - **Asunto y Preferencia:** No pueden estar vacíos.
+- Si el campo no es válido, muestra el mensaje de error.
+- Si es válido, lo borra.
+
+#### **Manejo del envío del formulario**
+Cuando el usuario presiona el botón de envío:
+- Se previene el envío con `event.preventDefault()`.
+- Se validan todos los campos.
+- Si **todos son correctos**, aparece una alerta de éxito y el formulario se limpia.
+- Si hay errores, se muestran en los campos correspondientes.
+
+#### **Limpieza de mensajes de error**
+La función `clearErrors()` borra todos los mensajes de error cuando el formulario se envía correctamente.
+
+
+### Sistema de filtros
+
+####  **Detectar los filtros seleccionados**
+- Se seleccionan todos los filtros (`.filtro`) y los elementos a filtrar (`.nuevo__productos__item`).
+- Se agrega un **evento `change`** a cada filtro para ejecutar la función `aplicarFiltro()` cuando el usuario cambia una opción.
+
+#### **Aplicar los filtros**
+La función `aplicarFiltro()`:
+- Obtiene los valores de los filtros marcados (`checked`).
+- Recorre todos los productos y:
+    - **Si no hay filtros activos**, muestra todos los elementos.
+    - **Si hay filtros activos**, muestra solo los que coincidan con la categoría seleccionada.
+- Para mostrar u ocultar productos, usa `classList.remove("oculto")` o `classList.add("oculto")`.
+
+### 
