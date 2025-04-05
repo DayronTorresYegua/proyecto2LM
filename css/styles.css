@@ -608,6 +608,7 @@ Nuevos productos
 .nuevo__productos__titulo {
     font-size: 1.8rem;
     margin-bottom: 2rem;
+    text-align: center;
     color: var(--text-dark);
 }
 
@@ -772,3 +773,8 @@ Filtros
 .eliminar-imagen:hover {
     background-color: var(--primary);
 }
+
+.carrito__logo {
+    width: 2.5rem;
+}
+

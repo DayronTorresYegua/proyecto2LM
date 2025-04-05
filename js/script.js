@@ -272,3 +272,88 @@ document.addEventListener("DOMContentLoaded", function() {
     // Añadir el evento al botón de agregar imagen
     botonAgregar.addEventListener("click", agregarImagen);
 });
+
+//  Carrito
+
+document.addEventListener('DOMContentLoaded', () => {
+    const productos = document.querySelectorAll('.nuevo__productos__item');
+
+    productos.forEach(producto => {
+        const nombre = producto.querySelector('.nuevo__productos__nombre').textContent;
+
+        // Crear botón
+        const boton = document.createElement('button');
+        boton.textContent = 'Añadir al carrito';
+        boton.classList.add('btn-carrito');
+
+        // Añadir evento al botón
+        boton.addEventListener('click', () => {
+            agregarAlCarrito(nombre);
+        });
+
+        // Añadir botón al producto
+        producto.appendChild(boton);
+    });
+
+    // Si estamos en la página del carrito, renderizar su contenido
+    const contenedor = document.getElementById('carrito-contenido');
+    if (contenedor) {
+        renderizarCarrito(contenedor);
+    }
+});
+
+function agregarAlCarrito(nombre) {
+    let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+    const productoExistente = carrito.find(producto => producto.nombre === nombre);
+
+    if (productoExistente) {
+        productoExistente.cantidad++;
+    } else {
+        carrito.push({ nombre, cantidad: 1 });
+    }
+
+    localStorage.setItem('carrito', JSON.stringify(carrito));
+    alert(`"${nombre}" se ha añadido al carrito.`);
+}
+
+function renderizarCarrito(contenedor) {
+    let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+    contenedor.innerHTML = '';
+
+    if (carrito.length === 0) {
+        contenedor.innerHTML = '<p>El carrito está vacío.</p>';
+        return;
+    }
+
+    carrito.forEach((producto, index) => {
+        const div = document.createElement('div');
+        div.classList.add('nuevo__productos__item');
+
+        div.innerHTML = `
+            <img class="nuevo__productos__imagen" src="assets/${producto.nombre.toLowerCase().replace(/\s/g, '-')}.png" alt="${producto.nombre}">
+            <h2 class="nuevo__productos__nombre">${producto.nombre}</h2>
+            <p class="nuevo__productos__descripcion">Cantidad: ${producto.cantidad}</p>
+            <button class="btn-eliminar" data-index="${index}">Eliminar unidad</button>
+        `;
+
+        contenedor.appendChild(div);
+    });
+
+    // Añadir eventos a botones de eliminar
+    const botonesEliminar = document.querySelectorAll('.btn-eliminar');
+    botonesEliminar.forEach(boton => {
+        boton.addEventListener('click', () => {
+            let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+            const index = parseInt(boton.getAttribute('data-index'));
+
+            if (carrito[index].cantidad > 1) {
+                carrito[index].cantidad--;
+            } else {
+                carrito.splice(index, 1);
+            }
+
+            localStorage.setItem('carrito', JSON.stringify(carrito));
+            renderizarCarrito(contenedor); // Recargar vista
+        });
+    });
+}
