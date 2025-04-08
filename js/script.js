@@ -150,9 +150,35 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 });
 
+// Formulario
+
 document.addEventListener("DOMContentLoaded", () => {
     const form = document.querySelector("form");
     const inputs = form.querySelectorAll("input, select");
+
+    // Mapeo de validaciones y mensajes de error
+    const validaciones = {
+        nombre: {
+            validar: value => value.length >= 3,
+            mensaje: "El nombre debe tener al menos 3 letras."
+        },
+        email: {
+            validar: value => value.includes("@") && value.includes("."),
+            mensaje: "Ingresa un correo electrónico válido. EJ: example@gmail.com"
+        },
+        telefono: {
+            validar: value => /^\d{9,15}$/.test(value),
+            mensaje: "El teléfono debe tener entre 9 y 15 números."
+        },
+        asunto: {
+            validar: value => value !== "",
+            mensaje: "El asunto no puede estar vacío."
+        },
+        preferencia: {
+            validar: value => value !== "",
+            mensaje: "Selecciona una opción."
+        }
+    };
 
     inputs.forEach(input => {
         input.addEventListener("blur", () => validateField(input));
@@ -177,7 +203,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     function validateField(input) {
-        let value = input.value.trim();
+        const value = input.value.trim();
         let errorSpan = input.nextElementSibling;
         if (!errorSpan || !errorSpan.classList.contains("error-message")) {
             errorSpan = document.createElement("span");
@@ -188,27 +214,11 @@ document.addEventListener("DOMContentLoaded", () => {
         let isValid = true;
         let errorMessage = "";
 
-        switch (input.id) {
-            case "nombre":
-                isValid = value.length >= 3;
-                errorMessage = "El nombre debe tener al menos 3 letras.";
-                break;
-            case "email":
-                isValid = value.includes("@") && value.includes(".");
-                errorMessage = "Ingresa un correo electrónico válido. EJ: example@gmail.com";
-                break;
-            case "telefono":
-                isValid = /^\d{9,15}$/.test(value);
-                errorMessage = "El teléfono debe tener entre 9 y 15 números.";
-                break;
-            case "asunto":
-                isValid = value !== "";
-                errorMessage = "El asunto no puede estar vacío.";
-                break;
-            case "preferencia":
-                isValid = value !== "";
-                errorMessage = "Selecciona una opción.";
-                break;
+        const validador = validaciones[input.id];
+
+        if (validador) {
+            isValid = validador.validar(value);
+            errorMessage = validador.mensaje;
         }
 
         if (!isValid) {
@@ -224,6 +234,8 @@ document.addEventListener("DOMContentLoaded", () => {
         document.querySelectorAll(".error-message").forEach(error => error.textContent = "");
     }
 });
+
+// Galeria
 
 document.addEventListener("DOMContentLoaded", function() {
     const galeriaLista = document.getElementById("galeria-lista");
@@ -273,7 +285,7 @@ document.addEventListener("DOMContentLoaded", function() {
     botonAgregar.addEventListener("click", agregarImagen);
 });
 
-//  Carrito
+// Carrito
 
 document.addEventListener('DOMContentLoaded', () => {
     const productos = document.querySelectorAll('.nuevo__productos__item');
