@@ -176,11 +176,41 @@ Esta funcionalidad añade un botón "Más información" a la sección de Kenjuts
 **Ventaja:**
 - Mejora la experiencia del usuario añadiendo interactividad y acceso a más información sobre el servicio de Kenjutsu.
 
+---
+
 ## 3. Funcionalidades Interactivas:
 
 ### Galería interactiva
 
+#### Inicialización de la galería
+- Espera a que la página cargue completamente (`DOMContentLoaded`).
+- Obtiene referencias a:
+  - Contenedor de la galería (`#galeria-lista`)
+  - Botón "Agregar imagen" (`#agregar-imagen`)
 
+#### Agregar imágenes
+**Función `agregarImagen()`**:
+1. Solicita al usuario una URL de imagen mediante `prompt()`.
+2. Si se proporciona una URL válida:
+  - Crea un nuevo elemento `<li>` con clase `galeria__item`.
+  - Crea un elemento `<img>` con:
+    - Clase `galeria__imagen`
+    - Atributo `src` con la URL proporcionada
+    - Texto alternativo "Imagen de galería"
+  - Crea un botón "Eliminar" con:
+    - Clase `eliminar-imagen`
+    - Evento `click` que elimina la imagen de la galería
+3. Añade la imagen y el botón al elemento `<li>`.
+4. Inserta el nuevo elemento en la galería.
+
+#### Eliminar imágenes
+- Evento delegado en `galeriaLista` para manejar clicks en botones "Eliminar":
+  - Identifica el elemento padre más cercano con clase `galeria__item`.
+  - Elimina el elemento completo de la galería.
+
+#### Eventos
+- Asigna el evento `click` al botón "Agregar imagen" para ejecutar `agregarImagen()`.
+---
 
 ### Formulario con validación
 
@@ -212,6 +242,7 @@ Cuando el usuario presiona el botón de envío:
 #### **Limpieza de mensajes de error**
 La función `clearErrors()` borra todos los mensajes de error cuando el formulario se envía correctamente.
 
+---
 
 ### Sistema de filtros
 
@@ -227,4 +258,40 @@ La función `aplicarFiltro()`:
     - **Si hay filtros activos**, muestra solo los que coincidan con la categoría seleccionada.
 - Para mostrar u ocultar productos, usa `classList.remove("oculto")` o `classList.add("oculto")`.
 
-### 
+---
+
+### Carrito
+
+#### Inicialización del carrito
+- Espera a que la página cargue completamente (`DOMContentLoaded`).
+- Selecciona todos los productos (`.nuevo__productos__item`) y para cada uno:
+  - Obtiene el nombre del producto.
+  - Crea un botón **"Añadir al carrito"**.
+  - Agrega un evento `click` al botón que llama a `agregarAlCarrito(nombre)`.
+  - Inserta el botón en el producto.
+
+#### Añadir productos al carrito
+**Función `agregarAlCarrito(nombre)`**:
+1. Obtiene el carrito guardado en `localStorage` (o crea uno vacío si no existe).
+2. Verifica si el producto ya está en el carrito:
+  - **Si existe**: aumenta su cantidad en 1.
+  - **Si no existe**: lo añade con `cantidad: 1`.
+3. Guarda el carrito actualizado en `localStorage`.
+4. Muestra un mensaje de confirmación: *`"[nombre]" se ha añadido al carrito.`*.
+
+#### Mostrar el carrito
+- Si existe el contenedor `#carrito-contenido`, se llama a `renderizarCarrito(contenedor)`.
+
+**Función `renderizarCarrito(contenedor)`**:
+1. **Obtiene el carrito** desde `localStorage`.
+2. **Limpia el contenedor**:
+  - Si el carrito está vacío, muestra: *`<p>El carrito está vacío.</p>`*.
+3. **Por cada producto**:
+  - Crea una tarjeta con:
+    - **Imagen**: Generada dinámicamente (ej: `assets/nombre-del-producto.png`).
+    - **Nombre** y **cantidad**.
+    - Botón **"Eliminar unidad"** con atributo `data-index` para identificar el producto.
+4. **Eventos de eliminar**:
+  - **Si cantidad > 1**: Reduce la cantidad en 1.
+  - **Si cantidad = 1**: Elimina el producto del carrito.
+  - **Actualiza `localStorage`** y vuelve a renderizar el carrito.
