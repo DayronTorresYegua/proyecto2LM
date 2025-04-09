@@ -292,6 +292,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     productos.forEach(producto => {
         const nombre = producto.querySelector('.nuevo__productos__nombre').textContent;
+        const precioTexto = producto.querySelector('.nuevo__productos__precio').textContent;
+        const precio = parseFloat(precioTexto.replace('€', '').trim());
 
         // Crear botón
         const boton = document.createElement('button');
@@ -300,7 +302,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Añadir evento al botón
         boton.addEventListener('click', () => {
-            agregarAlCarrito(nombre);
+            agregarAlCarrito(nombre, precio);
         });
 
         // Añadir botón al producto
@@ -311,21 +313,27 @@ document.addEventListener('DOMContentLoaded', () => {
     const contenedor = document.getElementById('carrito-contenido');
     if (contenedor) {
         renderizarCarrito(contenedor);
+        actualizarTotalCarrito();
     }
 });
 
-function agregarAlCarrito(nombre) {
+function agregarAlCarrito(nombre, precio) {
     let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
     const productoExistente = carrito.find(producto => producto.nombre === nombre);
 
     if (productoExistente) {
         productoExistente.cantidad++;
     } else {
-        carrito.push({ nombre, cantidad: 1 });
+        carrito.push({ nombre, cantidad: 1, precio });
     }
 
     localStorage.setItem('carrito', JSON.stringify(carrito));
     alert(`"${nombre}" se ha añadido al carrito.`);
+
+    // Actualizar el total si estamos en la página del carrito
+    if (document.getElementById('carrito-contenido')) {
+        actualizarTotalCarrito();
+    }
 }
 
 function renderizarCarrito(contenedor) {
@@ -345,6 +353,8 @@ function renderizarCarrito(contenedor) {
             <img class="nuevo__productos__imagen" src="assets/${producto.nombre.toLowerCase().replace(/\s/g, '-')}.png" alt="${producto.nombre}">
             <h2 class="nuevo__productos__nombre">${producto.nombre}</h2>
             <p class="nuevo__productos__descripcion">Cantidad: ${producto.cantidad}</p>
+            <p class="nuevo__productos__precio">€${producto.precio.toFixed(2)} (c/u)</p>
+            <p class="nuevo__productos__subtotal">Subtotal: €${(producto.precio * producto.cantidad).toFixed(2)}</p>
             <button class="btn-eliminar" data-index="${index}">Eliminar unidad</button>
         `;
 
@@ -365,7 +375,22 @@ function renderizarCarrito(contenedor) {
             }
 
             localStorage.setItem('carrito', JSON.stringify(carrito));
-            renderizarCarrito(contenedor); // Recargar vista
+            renderizarCarrito(contenedor);
+            actualizarTotalCarrito();
         });
     });
+}
+
+function actualizarTotalCarrito() {
+    let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+    let total = 0;
+
+    carrito.forEach(producto => {
+        total += producto.precio * producto.cantidad;
+    });
+
+    const totalElemento = document.getElementById('carrito-total');
+    if (totalElemento) {
+        totalElemento.textContent = `€${total.toFixed(2)}`;
+    }
 }
