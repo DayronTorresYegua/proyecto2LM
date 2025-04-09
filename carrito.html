@@ -22,9 +22,17 @@
     </ul>
   </nav>
 </header>
-<main>
-    <h1 class="nuevo__productos__titulo">Carrito</h1>
-    <div id="carrito-contenido" class="nuevo__productos__lista"></div>
+<main class="carrito__contenedor">
+  <section class="carrito__productos">
+    <h1 class="carrito__productos__titulo">Carrito</h1>
+    <ul id="carrito-contenido" class="carrito__productos__lista"></ul>
+  </section>
+
+  <aside class="carrito__resumen">
+    <h2 class="carrito__resumen__titulo">Resumen del pedido</h2>
+    <p class="carrito__resumen__total">Total: <span id="carrito-total">$0.00</span></p>
+    <button class="carrito__resumen__boton" type="button">Finalizar compra</button>
+  </aside>
 </main>
 <footer class="pie">
   <nav class="pie__redes">

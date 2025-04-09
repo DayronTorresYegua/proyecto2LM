@@ -654,6 +654,13 @@ Nuevos productos
     color: var(--text-dark);
 }
 
+.nuevo__productos__precio {
+    color: #288c20; /* Rojo vino */
+    font-weight: bold;
+    font-size: 1.1rem;
+    margin-top: 0.5rem;
+}
+
 /*
 Filtros
 */
@@ -710,6 +717,12 @@ Filtros
     transform: scale(1.2);
 }
 
+.error-message {
+    color: #8a0000; /* Rojo */
+    font-size: 0.9rem;
+    margin-top: 0.25rem;
+    display: block;
+}
 
 /* Estilos para la galería */
 .galeria {
@@ -736,11 +749,10 @@ Filtros
 }
 
 .galeria__imagen {
-    width: 250px;
-    height: 150px;
+    width: 15rem;
+    height: 10rem;
     object-fit: cover;
     border-radius: 0.5rem;
-    cursor: move;
 }
 
 .agregar-imagen {
@@ -778,3 +790,111 @@ Filtros
     width: 2.5rem;
 }
 
+/* Carrito */
+/* Estilos para el carrito - basados en los estilos de productos */
+.carrito__contenedor {
+    display: flex;
+    gap: 2rem;
+    width: 90%;
+    margin: 0 auto;
+    padding: 2rem 0;
+}
+
+.carrito__productos {
+    flex: 3;
+    padding: 2rem 1rem;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+.carrito__productos__titulo {
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    color: var(--text-dark);
+}
+
+.carrito__productos__lista {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+}
+
+.carrito__productos__item {
+    background-color: #ffffff;
+    border: 0.2rem solid #ddd;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    width: 16rem;
+    box-shadow: 0 0.25rem 0.4rem rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 1;
+    transition: transform 0.3s ease, z-index 0.3s ease;
+}
+
+.carrito__productos__item:hover {
+    transform: translateY(-0.3rem);
+    z-index: 10;
+}
+
+.carrito__productos__imagen {
+    width: 100%;
+    height: 12.5rem;
+    object-fit: cover;
+    border-radius: 0.5rem;
+}
+
+.carrito__productos__nombre {
+    font-size: 1.5rem;
+    margin: 1rem 0;
+    color: var(--text-dark);
+}
+
+.carrito__productos__descripcion {
+    font-size: 1rem;
+    color: var(--text-dark);
+}
+
+/* Estilos para el resumen del carrito */
+.carrito__resumen {
+    flex: 1;
+    padding: 2rem;
+    background-color: #f0f0f0;
+    border-radius: 0.5rem;
+    align-self: flex-start;
+    position: sticky;
+    top: 2rem;
+}
+
+.carrito__resumen__titulo {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    color: var(--text-dark);
+    text-align: center;
+}
+
+.carrito__resumen__total {
+    font-size: 1.3rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    font-weight: bold;
+}
+
+.carrito__resumen__boton {
+    width: 100%;
+    padding: 1rem;
+    background-color: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 0.5rem;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.carrito__resumen__boton:hover {
+    background-color: var(--secondary);
+}
